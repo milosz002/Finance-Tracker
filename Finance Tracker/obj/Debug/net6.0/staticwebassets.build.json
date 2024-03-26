@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/wT+ddGx3s8s90OnLDTKYLazp13f9UVk9Tc5e9lzxwg=",
+  "Hash": "29inDif0AvcQ+uB3LlCb0AS2y4mO5vDTVrAkRBMbGrM=",
   "Source": "Finance Tracker",
   "BasePath": "_content/Finance Tracker",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Programowanie\\C# .NET\\Finance Tracker\\Finance Tracker\\wwwroot\\favicon-16x16.png",
+      "SourceId": "Finance Tracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programowanie\\C# .NET\\Finance Tracker\\Finance Tracker\\wwwroot\\",
+      "BasePath": "_content/Finance Tracker",
+      "RelativePath": "favicon-16x16.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon-16x16.png"
+    },
+    {
+      "Identity": "D:\\Programowanie\\C# .NET\\Finance Tracker\\Finance Tracker\\wwwroot\\favicon-32x32.png",
+      "SourceId": "Finance Tracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programowanie\\C# .NET\\Finance Tracker\\Finance Tracker\\wwwroot\\",
+      "BasePath": "_content/Finance Tracker",
+      "RelativePath": "favicon-32x32.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon-32x32.png"
     },
     {
       "Identity": "D:\\Programowanie\\C# .NET\\Finance Tracker\\Finance Tracker\\wwwroot\\js\\site.js",
