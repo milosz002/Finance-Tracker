@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
 	ViewData["isDashboard"] = true;
 }
 
@@ -52,7 +51,7 @@
 
 @*Charts*@
 <div class="row mb-4">
-
+	@*Doughnut Chart*@
 	<div class="col-md-4">
 		<div class="widget chart">
 
@@ -65,7 +64,7 @@
 				<e-accumulation-series-collection >
 
 					<e-accumulation-series dataSource="@ViewBag.DoughnutChartData"
-					xName="categoryTitleWithIcon" yName="amount" innerRadius="60%" legendShape="Circle">
+					xName="categoryTitleWithIcon" yName="amount" innerRadius="50%" legendShape="Circle">
 
 						<e-accumulationseries-datalabel name="formattedAmount" visible></e-accumulationseries-datalabel>
 
@@ -85,7 +84,81 @@
 		</div>
 	</div>
 
+	@*Spline Chart*@
 	<div class="col-md-8">
+		<div class="widget chart">
 
+			<div class="p-4">
+				<h5 class="fw-bold">Income vs Expense</h5>
+			</div>
+
+			<ejs-chart id="splinechart" background="#1a222b" palettes=@(new string[]{"#54ffa9", "#ffe91a"})>
+
+				<e-chart-primaryxaxis valueType="Category">
+					<e-majorgridlines width="0"></e-majorgridlines>
+					<e-majorticklines width="0"></e-majorticklines>
+				</e-chart-primaryxaxis>
+
+				<e-chart-primaryyaxis>
+					<e-majorgridlines width="1" color="#32414d" dashArray="7,5"></e-majorgridlines>
+					<e-majorticklines width="0"></e-majorticklines>
+					<e-linestyle width="0"></e-linestyle>
+				</e-chart-primaryyaxis>
+
+				<e-chart-chartarea>
+
+					<e-chartarea-border width="0"></e-chartarea-border> 
+
+				</e-chart-chartarea>
+
+				<e-series-collection>
+
+					@*Income*@
+					<e-series dataSource="@ViewBag.SplineChartData" xName="day" yName="income" name="Income" width="4" type="@Syncfusion.EJ2.Charts.ChartSeriesType.Spline">
+
+					</e-series>
+
+					@*Expense*@
+					<e-series dataSource="@ViewBag.SplineChartData" xName="day" yName="expense" name="Expense" width="4" type="@Syncfusion.EJ2.Charts.ChartSeriesType.Spline">
+
+					</e-series>
+
+				</e-series-collection>
+
+				<e-chart-tooltipsettings enable EnableAnimation Shared="true"></e-chart-tooltipsettings>
+
+			</ejs-chart>
+
+		</div>
+	</div>
+</div>
+
+@*Recent transactions and more*@
+<div class="row">
+	<div class="col-md-6">
+		<div class="widget">
+			<div class="p-4">
+				<h5 class="fw-bold">Recent Transactions</h5>
+			</div>
+			<div class="px-4 pb-4">
+				<ejs-grid id="recent-transactions" dataSource="@ViewBag.RecentTransactions" gridLines="None">
+					<e-grid-columns>
+						<e-grid-column headerText="Category" field="CategoryTitleWithIcon"></e-grid-column>
+						<e-grid-column headerText="Date" field="Date" width="150px" format="dd-MMM-yyyy" type="date" textAlign="Left"></e-grid-column>
+						<e-grid-column headerText="Amount" field="FormattedAmount" width="150px" textAlign="Right"></e-grid-column>
+					</e-grid-columns>
+				</ejs-grid>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="widget h-100">
+			<div class="d-flex justify-content-center align-items-center h-100">
+				<span>
+					<i class="fa-solid fa-plus fa-2xl">Widget</i>
+				</span>
+			</div>
+		</div>
 	</div>
 </div>

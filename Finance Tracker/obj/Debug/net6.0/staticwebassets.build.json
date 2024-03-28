@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "29inDif0AvcQ+uB3LlCb0AS2y4mO5vDTVrAkRBMbGrM=",
+  "Hash": "VWY4p+91js34qDDMZvk46Bcu+RbF0yc+hF7BjL6br7Y=",
   "Source": "Finance Tracker",
   "BasePath": "_content/Finance Tracker",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\Programowanie\\C# .NET\\Finance Tracker\\Finance Tracker\\wwwroot\\profile_picture.jpeg",
+      "SourceId": "Finance Tracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programowanie\\C# .NET\\Finance Tracker\\Finance Tracker\\wwwroot\\",
+      "BasePath": "_content/Finance Tracker",
+      "RelativePath": "profile_picture.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\profile_picture.jpeg"
     }
   ]
 }
