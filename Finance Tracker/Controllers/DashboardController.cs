@@ -2,16 +2,20 @@
 using Humanizer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System.Globalization;
+using System.Net.Http;
 
 namespace Finance_Tracker.Controllers
 {
     public class DashboardController : Controller
     {
         private readonly ApplicationDbContext _context;
-        public DashboardController(ApplicationDbContext context)
+        private readonly IHttpClientFactory _clientFactory;
+        public DashboardController(ApplicationDbContext context, IHttpClientFactory clientFactory)
         {
             _context = context;
+            _clientFactory = clientFactory;
         }
 
         public async Task<ActionResult> Index()
@@ -106,8 +110,26 @@ namespace Finance_Tracker.Controllers
                 .ToListAsync();
 
 
+            // Downloading currency rates
+            var client = _clientFactory.CreateClient();
+            string apiUrl = "https://cdn.kurs-walut.info/api/latest.json";
+            var response = await client.GetAsync(apiUrl);
+            if (response.IsSuccessStatusCode)
+            {
+                var responseData = await response.Content.ReadAsStringAsync();
+                var currencyData = JsonConvert.DeserializeObject<CurrencyRates>(responseData);
 
-			return View();
+                // Preparation of code and currency rate data
+                var CurrencyRatesData = currencyData.Rates.Select(rate => new {
+                    Text = rate.Key,
+                    Value = rate.Value
+                }).ToList();
+
+                ViewBag.CurrencyRatesData = CurrencyRatesData;
+            }
+
+
+            return View();
         }
 
 
@@ -119,6 +141,13 @@ namespace Finance_Tracker.Controllers
         public string day;
         public decimal income;
         public decimal expense;
+    }
+
+    public class CurrencyRates
+    {
+        public string Table { get; set; }
+        public Dictionary<string, decimal> Rates { get; set; }
+        public DateTime LastUpdate { get; set; }
     }
 
 }

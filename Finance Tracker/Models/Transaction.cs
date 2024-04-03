@@ -18,11 +18,11 @@ namespace Finance_Tracker.Models
 
 
         [Column(TypeName = "decimal(18, 2)")]
-        [Range(1, int.MaxValue, ErrorMessage = "Amount should be greater then 0.")]
+        [Range(0, int.MaxValue, ErrorMessage = "Amount should be greater then 0.")]
         public decimal Amount { get; set; }
 
 
-        [Column(TypeName = "nvarchar(75)")]
+        [Column(TypeName = "nvarchar(1000)")]
         public string? Note { get; set; }
 
 

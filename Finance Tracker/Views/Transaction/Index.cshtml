@@ -6,6 +6,22 @@
     ViewData["PageActionUrl"] = "/Transaction/AddOrEdit";
 }
 
+<div class="row">
+    <div class="col-md-7 mb-1 d-flex">
+        <button id="importButton" class="btn btn-primary">
+            <i class="fa-solid fa-file-import"></i> Import Transactions
+        </button>
+        <form id="uploadForm">
+            @Html.AntiForgeryToken()
+            <input type="file" id="fileInput" style="display: none;" accept=".csv" onchange="uploadFile(this)" />
+        </form>
+        <div id="errorContainer" class="text-danger fs-6" style="display: none;"></div>
+
+        <a href="@Url.Action("ExportTransactionsToCsv", "Transaction")" class="btn btn-primary ms-1">
+            <i class="fa-solid fa-file-export"></i> Export Transactions
+        </a>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-md-7">
@@ -42,4 +58,56 @@
             </button>
         </form>
     </div>
+</script>
+
+
+<script>
+    document.getElementById('importButton').addEventListener('click', function () {
+        document.getElementById('fileInput').click();
+    });
+
+    function uploadFile(input) {
+        if (input.files && input.files[0]) {
+            var token = document.getElementsByName("__RequestVerificationToken")[0].value;
+            var fileName = input.files[0].name;
+            var extension = fileName.split('.').pop().toLowerCase();
+            if (extension !== 'csv') {
+                displayError('Please select a CSV file.');
+                return;
+            }
+
+            var formData = new FormData();
+            formData.append('csvFile', input.files[0]);
+
+            fetch('@Url.Action("ImportTransactions", "Transaction")', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                'RequestVerificationToken': token
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('File uploaded successfully');
+                    displayError('');
+                    window.location.reload();
+                } else {
+                    console.error('Upload failed');
+                    displayError(data.errorMessage);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    }
+
+    function displayError(message) {
+        var errorElement = document.getElementById('errorContainer');
+        if (message) {
+            errorElement.innerHTML = message;
+            errorElement.style.display = 'block';
+        } else {
+            errorElement.style.display = 'none';
+        }
+    }
 </script>

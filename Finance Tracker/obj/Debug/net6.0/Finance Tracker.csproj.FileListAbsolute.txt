@@ -250,3 +250,4 @@ D:\Programowanie\C# .NET\Finance Tracker\Finance Tracker\bin\Debug\net6.0\runtim
 D:\Programowanie\C# .NET\Finance Tracker\Finance Tracker\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Programowanie\C# .NET\Finance Tracker\Finance Tracker\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Programowanie\C# .NET\Finance Tracker\Finance Tracker\obj\Debug\net6.0\Finance Tracker.MvcApplicationPartsAssemblyInfo.cs
+D:\Programowanie\C# .NET\Finance Tracker\Finance Tracker\bin\Debug\net6.0\CsvHelper.dll

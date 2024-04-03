@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Finance Tracker/1.0.0": {
         "dependencies": {
+          "CsvHelper": "31.0.2",
           "Microsoft.EntityFrameworkCore": "6.0.28",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.28",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.28",
@@ -16,6 +17,14 @@
         },
         "runtime": {
           "Finance Tracker.dll": {}
+        }
+      },
+      "CsvHelper/31.0.2": {
+        "runtime": {
+          "lib/net6.0/CsvHelper.dll": {
+            "assemblyVersion": "31.0.0.0",
+            "fileVersion": "31.0.2.15"
+          }
         }
       },
       "Humanizer/2.14.1": {
@@ -2499,6 +2508,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "CsvHelper/31.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ndlIN77XcFm6qqGlNPzl0XjVupMCBVhVSiO+1+X2UhJtnnvkx9f//7FOvlkLuEQ76NC3Y7owa8IOhgtKVa4H7Q==",
+      "path": "csvhelper/31.0.2",
+      "hashPath": "csvhelper.31.0.2.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",

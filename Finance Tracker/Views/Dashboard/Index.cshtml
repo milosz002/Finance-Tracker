@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Newtonsoft.Json;
+@{
 	ViewData["isDashboard"] = true;
 }
 
@@ -154,11 +155,83 @@
 
 	<div class="col-md-6">
 		<div class="widget h-100">
-			<div class="d-flex justify-content-center align-items-center h-100">
-				<span>
-					<i class="fa-solid fa-plus fa-2xl">Widget</i>
-				</span>
+			<div class="p-4">
+				<h5 class="fw-bold">Currency Converter</h5>
+			</div>
+			<div class="px-4 pb-4">
+
+				@*Dropdownlists*@
+				<div class="dropdowns-container justify-content-center d-flex gap-3 mb-5" >
+					From
+					<div style="max-width: 200px;">
+						<ejs-dropdownlist id="fromCurrency" dataSource="@ViewBag.CurrencyRatesData" placeholder="Currency">
+							<e-dropdownlist-fields text="Text" value="Text"></e-dropdownlist-fields>
+						</ejs-dropdownlist>
+					</div>
+					To
+					<div style="max-width: 200px;">
+						<ejs-dropdownlist id="toCurrency" dataSource="@ViewBag.CurrencyRatesData" placeholder="Currency">
+							<e-dropdownlist-fields text="Text" value="Text"></e-dropdownlist-fields>
+						</ejs-dropdownlist>
+					</div>
+				</div>
+
+				@*Amount input and result*@
+				<div class="d-flex justify-content-center align-items-center gap-3">
+					<div class="w-50">
+						<ejs-textbox id="amount" type="number" placeholder="Amount" floatLabelType="Always"></ejs-textbox>
+					</div>
+
+					<div class="mt-4">
+						=
+						<span id="result">0</span>
+					</div>
+				</div>
+
+
 			</div>
 		</div>
 	</div>
 </div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+	var currencyRates = @Html.Raw(JsonConvert.SerializeObject(ViewBag.CurrencyRatesData));
+
+    var fromCurrencyDropdown = document.getElementById('fromCurrency').ej2_instances[0];
+    var toCurrencyDropdown = document.getElementById('toCurrency').ej2_instances[0];
+	var amountBox = document.getElementById('amount');
+
+    fromCurrencyDropdown.addEventListener('change', updateConversion);
+    toCurrencyDropdown.addEventListener('change', updateConversion);
+	amountBox.addEventListener('change', updateConversion);
+
+    function updateConversion() {
+        var fromCurrencyCode = document.getElementById("fromCurrency").ej2_instances[0].value;
+        var toCurrencyCode = document.getElementById("toCurrency").ej2_instances[0].value;
+        var amount = parseFloat(document.getElementById("amount").value);
+
+		// Rate search for source currencies
+		var fromRateObj = currencyRates.find(function(rate) {
+			return rate.Text === fromCurrencyCode;
+		});
+		var fromRate = fromRateObj ? fromRateObj.Value : null;
+
+		// Search for the rate for the target currency
+		var toRateObj = currencyRates.find(function(rate) {
+			return rate.Text === toCurrencyCode;
+		});
+		var toRate = toRateObj ? toRateObj.Value : null;
+		console.log(fromRate, toRate);
+
+        // Rate calculation
+        if (!isNaN(fromRate) && !isNaN(toRate) && !isNaN(amount)) {
+            var result = (toRate / fromRate) * amount;
+            document.getElementById("result").innerText = result.toFixed(2);
+        }
+    }
+
+});
+</script>
+

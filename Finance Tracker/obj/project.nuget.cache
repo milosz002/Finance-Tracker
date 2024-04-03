@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "VKfMmFk0JFRzgP3qEokgrY6uHdhYLAuE1/8qwwN3azxWLgIV6rVZq/YcrHsh7NUgbhRcvlysKgtSYAkSeY79rQ==",
+  "dgSpecHash": "FrBF9XswE2+uZHH+khVbe/U7ek2+amu234AbUX1k7xlXa1ZKB1nz8/jr6nLw4OwpYuI5KSckSdjo57PqwI0HGA==",
   "success": true,
   "projectFilePath": "D:\\Programowanie\\C# .NET\\Finance Tracker\\Finance Tracker\\Finance Tracker.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\milos\\.nuget\\packages\\csvhelper\\31.0.2\\csvhelper.31.0.2.nupkg.sha512",
     "C:\\Users\\milos\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\milos\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\milos\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
