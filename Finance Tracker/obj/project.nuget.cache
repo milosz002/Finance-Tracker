@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FrBF9XswE2+uZHH+khVbe/U7ek2+amu234AbUX1k7xlXa1ZKB1nz8/jr6nLw4OwpYuI5KSckSdjo57PqwI0HGA==",
+  "dgSpecHash": "aMl7zf1fyeSZSWeq9mLf413SJpDWrAGGmmrAQgNXCNC3PX4e3XW7+gvhoxY8Q9Te5edu9LUBnkB1d0aC55Zx6Q==",
   "success": true,
   "projectFilePath": "D:\\Programowanie\\C# .NET\\Finance Tracker\\Finance Tracker\\Finance Tracker.csproj",
   "expectedPackageFiles": [
@@ -115,6 +115,8 @@
     "C:\\Users\\milos\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\milos\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\milos\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\milos\\.nuget\\packages\\npgsql\\6.0.10\\npgsql.6.0.10.nupkg.sha512",
+    "C:\\Users\\milos\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\6.0.22\\npgsql.entityframeworkcore.postgresql.6.0.22.nupkg.sha512",
     "C:\\Users\\milos\\.nuget\\packages\\nuget.common\\6.6.1\\nuget.common.6.6.1.nupkg.sha512",
     "C:\\Users\\milos\\.nuget\\packages\\nuget.configuration\\6.6.1\\nuget.configuration.6.6.1.nupkg.sha512",
     "C:\\Users\\milos\\.nuget\\packages\\nuget.dependencyresolver.core\\6.6.1\\nuget.dependencyresolver.core.6.6.1.nupkg.sha512",

@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[6.0.16, )"
             },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.22, )"
+            },
             "Syncfusion.EJ2.AspNet.Core": {
               "target": "Package",
               "version": "[25.1.35, )"
