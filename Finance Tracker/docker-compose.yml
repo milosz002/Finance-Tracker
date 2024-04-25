@@ -8,6 +8,8 @@ services:
       SA_PASSWORD: 'd9Vs382fgmU9'
     volumes:
       - dbdata:/var/opt/mssql
+    ports:
+      - "1433:1433"
 
   app:
     build:
@@ -20,11 +22,6 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ConnectionStrings__DefaultConnection: "Server=db;Database=FT_DB;User Id=sa;Password=d9Vs382fgmU9;"
-    volumes:
-      - .:/app
-      - /app/node_modules
-      - /app/bin
-      - /app/obj
 
 volumes:
   dbdata:
