@@ -8,8 +8,6 @@ services:
       SA_PASSWORD: 'd9Vs382fgmU9'
     volumes:
       - dbdata:/var/opt/mssql
-    ports:
-      - "1433:1433"
 
   app:
     build:
